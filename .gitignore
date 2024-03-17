@@ -1,0 +1,8 @@
+# Ignore .env file
+.env
+
+# Ignore Dockerfile file
+Dockerfile_local
+
+# Ignore deployment file
+deployment_local.yml

@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nlptosql
+  labels:
+    app: nlptosql
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nlptosql
+  template:
+    metadata:
+      labels:
+        app: nlptosql
+    spec:
+      containers:
+      - name: nlptosql
+        image: acrtfx.azurecr.io/nlptosql:3.16
+        ports:
+        - containerPort: 5000
+        env:
+        - name: AZURE_OPENAI_DEPLOYMENT_NAME
+          value: ""
+        - name: AZURE_OPENAI_ENDPOINT
+          value: ""
+        - name: AZURE_OPENAI_API_KEY
+          value: ""
+        - name: SPEECH_KEY
+          value: ""
+        - name: SPEECH_REGION
+          value: ""
+        - name: server_name
+          value: ""
+        - name: database_name
+          value: ""
+        - name: SQLADMIN_USER
+          value: ""
+        - name: SQL_PASSWORD
+          value: ""

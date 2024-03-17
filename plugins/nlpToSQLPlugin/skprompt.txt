@@ -1,0 +1,12 @@
+### SQL SERVER SQL tables, with their properties:
+#
+# ExplorationProduction (WellID, WellName, Location, ProductionDate, ProductionVolume, Operator, FieldName, Reservoir, Depth, APIGravity, WaterCut, GasOilRatio)
+# Sellers (seller_Id, seller_name, seller_email, seller_contact_number, seller_address)
+#
+### A SQL query to find {{$input}}. Please provide only one SQL query and nothing else in a single string. Do not prompt anything else apart from the sql query. Do not put double qoutes " before Select statement like "Select  
+User: How many locations are there? 
+Assistant: SELECT COUNT(DISTINCT Location) AS NumberOfLocations FROM ExplorationProduction;
+User: What is the Location of color well?
+Assistant: SELECT Location FROM ExplorationProduction WHERE WellName = 'color well';
+User: {{$input}}
+Assistant:

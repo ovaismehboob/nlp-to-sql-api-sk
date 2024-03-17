@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:  
+  name: nlptosql
+  labels:
+    app: nlptosql
+spec:
+  ports:
+  - port: 80
+    targetPort: 5000
+    protocol: TCP
+  type: LoadBalancer
+  selector:
+    app: nlptosql
